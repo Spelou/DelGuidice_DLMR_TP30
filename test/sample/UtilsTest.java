@@ -15,14 +15,14 @@ import static org.junit.Assert.*;
  * @author Quentin
  */
 public class UtilsTest {
-    
+
     public UtilsTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
@@ -33,21 +33,18 @@ public class UtilsTest {
     @Test
     public void testConcatWords() {
         System.out.println("concatWords");
-        assertTrue(Utils.concatWords("man","ger").equals("manger"));
+        assertTrue(Utils.concatWords("man", "ger").equals("manger"));
     }
 
     /**
      * Test of computeFactorial method, of class Utils.
      */
-    @Test
+    @Test(timeout = 1000)
     public void testComputeFactorial() {
         System.out.println("computeFactorial");
-        int number = 0;
-        String expResult = "";
-        String result = Utils.computeFactorial(number);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        final int factorialOf = 1 + (int) (30000 * Math.random());
+        System.out.println("computing " + factorialOf + '!');
+        System.out.println(factorialOf + "! = " + Utils.computeFactorial(factorialOf));
     }
 
     /**
@@ -56,12 +53,7 @@ public class UtilsTest {
     @Test
     public void testNormalizeWord() {
         System.out.println("normalizeWord");
-        String word = "";
-        String expResult = "";
-        String result = Utils.normalizeWord(word);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
-    
+
 }
