@@ -9,6 +9,8 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
 
 /**
  *
@@ -21,11 +23,23 @@ public class VectorsTest {
 
     @BeforeClass
     public static void setUpClass() {
+        System.out.println("* UtilsJUnit4Test: @BeforeClass method");
     }
 
     @AfterClass
     public static void tearDownClass() {
+        System.out.println("* UtilsJUnit4Test: @AfterClass method");
     }
+    
+    @Before
+    public void setUp(){
+         System.out.println("* UtilsJUnit4Test: @Before method");
+    }
+    @After
+    public void tearDown(){
+         System.out.println("* UtilsJUnit4Test: @After method");
+    }
+    
 
     /**
      * Test of equal method, of class Vectors.
