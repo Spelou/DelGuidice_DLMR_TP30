@@ -9,7 +9,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
+import org.junit.Ignore;
 /**
  *
  * @author Quentin
@@ -50,10 +50,18 @@ public class UtilsTest {
     /**
      * Test of normalizeWord method, of class Utils.
      */
+    @Ignore
     @Test
     public void testNormalizeWord() {
         System.out.println("normalizeWord");
 
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkExpectedException() {
+        System.out.println("checkExpectedException");
+        final int factorialOf = -5;
+        System.out.println(factorialOf + "! = " + Utils.computeFactorial(factorialOf));
     }
 
 }
